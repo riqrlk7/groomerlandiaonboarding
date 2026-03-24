@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Button 
             className="bg-[#C82323] hover:bg-[#A81D1D] text-white font-black text-xs uppercase tracking-widest px-8 h-11 rounded-xl flex items-center gap-2 shadow-lg shadow-red-900/20 transition-all duration-300"
-            onClick={() => window.open('https://alunosgroomerlandia.netlify.app/', '_blank')}
+            onClick={() => window.open('https://portalgroomer.netlify.app/', '_blank')}
           >
             <LogIn className="w-4 h-4" />
             ACESSAR PORTAL DE ALUNOS
