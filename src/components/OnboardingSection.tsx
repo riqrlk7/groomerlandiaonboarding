@@ -10,9 +10,9 @@ const steps = [
   },
   { 
     num: "02", 
-    label: "Ajuste sua bio hoje", 
-    desc: "Pare de parecer amador. O seu perfil vai mudar hoje.",
-    action: "Siga o checklist do Módulo D1",
+    label: "Acesse o portal de alunos", 
+    desc: "E comece suas tarefas a partir de agora.",
+    action: "Faça o login na plataforma",
     icon: FileText 
   },
   { 
