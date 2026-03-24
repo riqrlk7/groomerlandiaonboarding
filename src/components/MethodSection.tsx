@@ -1,90 +1,67 @@
-import { Target, Flame, DollarSign } from "lucide-react";
+import { Target, Flame, DollarSign, CheckCircle2 } from "lucide-react";
 
 const steps = [
   {
     icon: Target,
     tag: "D1",
     title: "Diferenciação",
-    color: "coral",
-    problem: '"Sou só mais uma groomer"',
-    solves: ["Posicionamento claro", "Diferencial percebido", "Preço ajustado"],
-    result: "Cliente para de comparar por preço",
+    goal: "Construir sua autoridade única no mercado.",
+    deliverables: ["Novo Posicionamento Estratégico", "Checklist de Perfil de Elite", "Sua Nova Tabela de Preços"],
   },
   {
     icon: Flame,
     tag: "D2",
     title: "Desejo",
-    color: "gold",
-    problem: "Posta e ninguém chama",
-    solves: ["Conteúdo que gera autoridade", "Conexão com cliente", "Fim do perfil catálogo"],
-    result: "Cliente começa a chamar no direct",
+    goal: "Fazer o cliente ideal desejar o seu trabalho.",
+    deliverables: ["Funil de Conteúdo de Autoridade", "Roteiro de Narrativas Inevitáveis", "Estratégia de Conexão Diária"],
   },
   {
     icon: DollarSign,
     tag: "D3",
     title: "Dinheiro",
-    color: "emerald",
-    problem: "Conversa não vira cliente",
-    solves: ["Script de direct", "Fechamento simples", "Organização da agenda"],
-    result: "Agenda cheia + previsibilidade",
+    goal: "Transformar directs e conversas em lucro real.",
+    deliverables: ["Script de Fechamento Irresistível", "Gestão de Agenda Blindada", "Estratégia de Fidelização 5 Estrelas"],
   },
 ];
 
-const colorMap: Record<string, { bg: string; text: string; border: string; dot: string }> = {
-  coral: { bg: "bg-coral/10", text: "text-coral", border: "border-coral/20", dot: "bg-coral" },
-  gold: { bg: "bg-gold/10", text: "text-gold", border: "border-gold/20", dot: "bg-gold" },
-  emerald: { bg: "bg-emerald/10", text: "text-emerald", border: "border-emerald/20", dot: "bg-emerald" },
-};
-
 const MethodSection = () => (
-  <section className="px-6 py-20 max-w-5xl mx-auto">
-    <div className="text-center mb-16">
-      <span className="text-sm font-display tracking-wider uppercase text-coral mb-4 block">
-        🧩 O Método Groomerlândia™
-      </span>
-      <h2 className="text-4xl md:text-5xl font-bold mb-4">A Escada dos 3D's</h2>
-      <p className="text-muted-foreground text-lg">
-        Sem D1 → D2 não funciona. Sem D2 → D3 não acontece.
-      </p>
-    </div>
+  <section className="px-6 py-28 bg-white border-y border-brand-dark/5">
+    <div className="max-w-6xl mx-auto">
+      <div className="mb-16">
+        <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-4 tracking-tight">O Mapa da sua Jornada</h2>
+        <p className="text-brand-dark/60 text-lg font-medium mb-4">Cada etapa foi desenhada para eliminar um gargalo do seu negócio.</p>
+        <p className="inline-block px-4 py-2 bg-brand-authority/5 border border-brand-authority/10 rounded-lg text-brand-authority font-black text-sm uppercase tracking-tight">
+          "Se você travar em qualquer etapa, sua agenda trava junto."
+        </p>
+      </div>
 
-    <div className="grid md:grid-cols-3 gap-6">
-      {steps.map((step, i) => {
-        const c = colorMap[step.color];
-        return (
-          <div key={step.tag} className={`gradient-dark-card rounded-2xl p-6 border ${c.border} flex flex-col`}>
-            <div className="flex items-center gap-3 mb-5">
-              <div className={`w-10 h-10 rounded-xl ${c.bg} flex items-center justify-center`}>
-                <step.icon className={`w-5 h-5 ${c.text}`} />
+      <div className="grid lg:grid-cols-3 gap-8">
+        {steps.map((step) => (
+          <div key={step.tag} className="flex flex-col p-8 rounded-[2rem] bg-brand-light/20 border border-brand-dark/5 hover:border-brand-authority/20 transition-all group">
+            <div className="flex items-center justify-between mb-8">
+              <div className="w-14 h-14 rounded-2xl bg-brand-authority flex items-center justify-center text-white shadow-lg shadow-brand-authority/20">
+                <step.icon className="w-7 h-7" />
               </div>
-              <div>
-                <span className={`text-xs font-display font-bold ${c.text} tracking-wider`}>{step.tag}</span>
-                <h3 className="text-lg font-display font-bold">{step.title}</h3>
-              </div>
+              <span className="text-4xl font-black text-brand-dark/5">{step.tag}</span>
             </div>
 
-            <div className={`${c.bg} rounded-lg px-4 py-2.5 mb-5`}>
-              <p className={`text-sm font-medium ${c.text}`}>⚡ {step.problem}</p>
-            </div>
+            <h3 className="text-2xl font-bold text-brand-dark mb-4">{step.title}</h3>
+            <p className="text-brand-dark/70 font-semibold mb-8 leading-relaxed">{step.goal}</p>
 
-            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2 font-display">O que resolve:</p>
-            <ul className="space-y-2 mb-5 flex-1">
-              {step.solves.map((s) => (
-                <li key={s} className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className={`w-1.5 h-1.5 rounded-full ${c.dot} shrink-0`} />
-                  {s}
-                </li>
-              ))}
-            </ul>
-
-            <div className="border-t border-border pt-4">
-              <p className="text-sm font-medium">
-                👉 <span className={c.text}>{step.result}</span>
-              </p>
+            <div className="mt-auto">
+              <h4 className="text-[10px] font-black text-brand-authority uppercase tracking-[0.2em] mb-5">O que você vai construir:</h4>
+              <ul className="space-y-4">
+                {step.deliverables.map((d) => (
+                  <li key={d} className="flex items-start gap-3 text-sm font-bold text-brand-dark/80">
+                    <CheckCircle2 className="w-4 h-4 text-brand-authority mt-0.5" />
+                    {d}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        );
-      })}
+        ))}
+      </div>
     </div>
   </section>
 );
